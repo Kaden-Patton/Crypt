@@ -1,0 +1,28 @@
+Block & Stream cipher encryption/decryption program.
+
+Build:
+    Make sure that both the Makefile and all .cpp and .h files are in the same directory. Open a terminal on a machine with make and the g++ compiler and run "make" to build the project. The output program is named "cipher"
+
+Usage:
+
+./cipher <BS> <input_file> <output_file> <key_file> <E|D>
+    * This program requires a 16-byte (128 bit) key
+
+Arguments:
+
+    <B|S>:
+        B: Block mode, program will perform read operations in 16-byte blocks
+        S: Stream mode, program will perform read operations one byte at a time
+    
+    input_file:
+        Filename of the output file
+    
+    output_file:
+        Filename of the output file (!!CAUTION!! The program will overwrite any files of the same name)
+    
+    key_file:
+        Filename of the file that contains the key
+    
+    <E|D>:
+        E: Encrypt mode, program will encrypt input with the provided key and output the encrypted file.
+        D: Decrypt mode, program will decrypt input with the provided key and output the decrypted file. 
