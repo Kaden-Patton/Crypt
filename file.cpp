@@ -22,11 +22,11 @@ std::string File::Read(std::string fileName) {
 
 std::string File::ReadBlock(std::string fileName, size_t blockSize) {
     std::string source = File::Read(fileName);
-    std::vector<std::string> blocks{};
     if(source.length() == 0) {
         return "";
     }
     
+    std::string output_str = "";
     int blocksNeeded = (source.length() <= blockSize) ? 1 : source.length() / blockSize + 1;
 
     for(int i = 0; i < blocksNeeded; i++) {
@@ -38,14 +38,9 @@ std::string File::ReadBlock(std::string fileName, size_t blockSize) {
             temp.append(padAmount, '\x81');
         }
 
-        blocks.push_back(temp);
+        output_str.append(temp);
     }
-
-    std::string output_str = "";
-    for(std::string block : blocks) {
-        output_str.append(block);
-    }
-    
+   
     return output_str;
 }
 

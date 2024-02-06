@@ -56,6 +56,9 @@ s-enc:
 s-dec:
 	./cipher S a output.txt keyfile D
 
+diff:
+	diff -qs input.txt output.txt
+
 print-test:
 	@printf "$(FONT_RED)red$(FONT_RESET)\n"
 	@printf "$(FONT_GREEN)green$(FONT_RESET)\n"
