@@ -1,3 +1,5 @@
 *.txt
 keyfile
 a
+cipher
+*.o
